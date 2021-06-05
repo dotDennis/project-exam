@@ -1,0 +1,542 @@
+/* 
+-----------------------------  
+----  Table of content   ----
+-----------------------------
+----  1. Variables       ----
+----  2. Global Resets   ----
+----  3. Font Styling    ----
+----  4. Header          ----
+----  5. Footer          ----
+----  6. Other           ----
+-----------------------------
+-----------------------------
+-----------------------------
+*/
+
+/* Variables */
+:root {
+  --primary: #161719;
+  --primary-op25: #16171925;
+  --primary-op65: #16171965;
+  --primary-op90: #161719e6;
+  --accent: #90c362;
+  --accent-75op: #90c36275;
+  --link: #1e6d81;
+  --off-white: #ededec;
+  --off-white-75op: #ededec75;
+  --warn: #f93343;
+}
+
+/* Global Resets */
+html {
+  scroll-behavior: smooth;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--off-white);
+  color: var(--primary);
+}
+
+li {
+  list-style: none;
+}
+
+main {
+  padding-top: 125px;
+}
+
+/* Global Font Styling */
+
+/* Logo */
+h1 {
+  font-family: "Game Played", sans-serif;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  color: var(--accent);
+  text-shadow: var(--accent-75op) -5px 0px 1px;
+  font-weight: 400;
+  font-size: 2.4rem;
+  -webkit-text-stroke: var(--primary) 1px;
+  padding: 1rem 0;
+  white-space: nowrap;
+  font-display: swap;
+}
+
+/* Page specific titles */
+h2 {
+  font-weight: 900;
+  font-size: 34px;
+}
+
+h3 .titles {
+  font-weight: 700;
+  font-size: 26px;
+}
+
+h3 .sub-titles {
+  font-weight: 500;
+  font-size: 26px;
+}
+
+/* Paragraphs like, blogs, about me, & other (p-tags)*/
+.blog-txt {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+/* Part of link which is not = anchor tag (p-tags)*/
+.link-txt {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+a {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--link);
+}
+
+/* Header */
+.search-bar form {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar form .search-field {
+  height: 29.75px;
+  background: var(--primary-op25);
+  border: none;
+}
+
+.search-bar {
+  display: none;
+}
+
+.search-bar form .search-field.search {
+  cursor: pointer;
+  border: none;
+}
+
+.search-bar input {
+  padding-left: 10px;
+  font-size: 14px;
+}
+
+.hamburger-menu {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 25px;
+  background: var(--primary);
+  z-index: 100;
+}
+
+.menu-wrapper {
+  background: var(--primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 5;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 15px var(--primary);
+}
+
+/* mobile menu */
+.hamburger-menu .search,
+.hamburger-menu .main-nav-mobile,
+.hamburger-menu .socials {
+  border: none;
+  font-size: 34px;
+  font-weight: 900;
+  cursor: pointer;
+  padding: 0;
+  color: var(--off-white);
+  background: none;
+  outline: none;
+}
+
+.fa-times {
+  color: var(--accent);
+  animation: fade-in 0.5s forwards;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main-nav-mobile {
+  min-width: 37px; /* To stop flex from changing positioning due to html change */
+}
+
+.main-navigation,
+.social-icons {
+  display: none;
+  position: fixed;
+  height: 101%;
+  width: 101%;
+  padding-bottom: 68px; /* Padding due to navigation being on bottom - with a fixed height of 48px */
+  justify-content: center;
+  align-items: center;
+  background: var(--primary);
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: -100%;
+  transition: 0.3s ease-in;
+  z-index: 98;
+}
+
+.current-page {
+  border-bottom: 2px solid var(--accent);
+}
+
+/* Apply this in javascript when button clicked */
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  display: flex;
+  opacity: 0;
+}
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  display: flex;
+}
+
+@keyframes slide-in {
+  100% {
+    left: 50%;
+    top: 50%;
+    opacity: 100%;
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 100%;
+  }
+  100% {
+    left: -100%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0%;
+  }
+}
+
+.main-navigation ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.main-navigation ul,
+.social-icons ul {
+  margin: 0;
+  padding: 0;
+}
+
+.nav-link {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-size: 34px;
+  color: var(--off-white);
+}
+
+.logo-link {
+  text-decoration: none;
+}
+
+.nav-link i {
+  font-size: 45px;
+  margin: 25px 0;
+}
+
+.main-navigation ul li {
+  padding: 25px 0;
+}
+
+.nav-link:hover {
+  color: var(--accent);
+}
+
+.display-none {
+  animation: hide-logo 0.4s forwards;
+}
+
+.display-block {
+  animation: show-logo 0.4s forwards;
+}
+
+@keyframes show-logo {
+  0% {
+    opacity: 0%;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes hide-logo {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0%;
+  }
+}
+
+@media screen and (min-width: 620px) {
+  h1 {
+    font-size: 4.875rem;
+  }
+  main {
+    padding-top: 125px;
+  }
+  article,
+  section,
+  div.content section {
+    margin: 4rem auto;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  main {
+    padding-top: 182px; /* Making number === menu-wrapper height on screens larger than 1000px */
+  }
+  .hamburger-menu {
+    display: none;
+  }
+  h1 {
+    line-height: 1.2;
+  }
+  .main-navigation,
+  .main-navigation ul,
+  .main-navigation ul li,
+  .social-icons,
+  .social-icons ul,
+  .social-icons ul li,
+  .search-bar {
+    all: unset;
+  }
+  .nav-link {
+    color: var(--off-white);
+  }
+  .search-bar form .search-field {
+    background: var(--off-white);
+    height: 35px;
+    z-index: 101;
+  }
+  .search-bar input,
+  .search-bar .search {
+    color: var(--primary);
+    border: none;
+    outline: none;
+    background: var(--off-white);
+  }
+  .search-bar form .search-field.search i {
+    font-size: 1.2rem;
+  }
+  .social-icons {
+    z-index: 101;
+  }
+  .social-icons .nav-link i {
+    font-size: 40px;
+  }
+
+  .social-icons {
+    margin-right: 2.8%;
+    padding-top: 8px;
+    white-space: nowrap;
+  }
+  .search-bar {
+    margin-left: 2.8%;
+  }
+  /* Magic numbers to make social icons & search bar perfect widths */
+  .search-bar form {
+    max-width: 160.66px;
+  }
+  .search-bar input.search-field {
+    max-width: calc(100% - 25.34px);
+  }
+  /* ends here */
+
+  .menu-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .main-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+    padding-bottom: 1rem;
+  }
+  .main-navigation li a {
+    margin: 0 5rem;
+  }
+
+  /* main navigation text - on scroll (applied in hamburgerMenu.js */
+  .main-navigation li a.scrolled {
+    margin: 0 10px;
+    font-size: 34px;
+    color: var(--accent);
+  }
+  .main-navigation li a.scrolled:hover {
+    color: var(--off-white);
+  }
+}
+
+/* Footer */
+footer {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  margin: 3rem auto 5rem auto;
+  border-top: 2px solid var(--primary);
+}
+footer div {
+  margin-top: 10px;
+  text-align: center;
+  color: rgba(22, 23, 25, 0.65);
+}
+
+footer div p:last-of-type {
+  margin-top: 5px;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+/*  Other */
+input {
+  border-radius: 0;
+}
+
+input[type="text"] {
+  -webkit-appearance: none;
+}
+
+article,
+section {
+  width: 80%;
+  margin: 2.5rem auto;
+}
+
+article nav .icons-container {
+  margin: 4rem 0 0 0;
+  display: flex;
+  padding: 0;
+}
+
+.about-h2 {
+  margin-top: 0;
+}
+
+.icons-container li {
+  margin: 0 2rem 0 0;
+}
+
+.social-icon {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.social-icon:hover {
+  color: var(--accent);
+}
+
+div.status {
+  display: flex;
+  justify-content: center;
+  background: var(--primary);
+  box-shadow: 0 0 7px var(--primary-op90);
+  width: 100%;
+  border-radius: 500rem; /* stopid high =) for nice rounded effect */
+}
+
+div.status p.status-txt {
+  color: var(--warn);
+  font-weight: 500;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 1rem;
+}
+
+input {
+  color: var(--primary);
+}
+textarea {
+  color: var(--primary);
+}
+
+@media screen and (min-width: 620px) {
+  article,
+  section {
+    margin: 4rem auto;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  div.status {
+    margin-top: 6rem;
+  }
+  article,
+  section,
+  div.content section {
+    width: 70%;
+    margin: 6rem auto;
+  }
+}
+
+/* Loader */
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  color: var(--link);
+}
+
+.loader::after {
+  content: "\2026";
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: load steps(4, end) 2s infinite;
+  width: 0px;
+}
+
+@keyframes load {
+  to {
+    width: 2.2rem;
+  }
+}
