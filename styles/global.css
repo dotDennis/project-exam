@@ -455,6 +455,14 @@ article nav .icons-container {
   padding: 0;
 }
 
+.about-article {
+  max-width: 900px;
+}
+
+.about-article p {
+  max-width: 800px;
+}
+
 .about-h2 {
   margin-top: 0;
 }
@@ -504,6 +512,9 @@ textarea {
 }
 
 @media screen and (min-width: 1080px) {
+  .social-icons ul li {
+    margin: 5px;
+  }
   div.status {
     margin-top: 6rem;
   }

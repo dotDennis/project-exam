@@ -2,8 +2,6 @@ main {
   width: 100%;
 }
 
-
-
 .post-container img {
   cursor: pointer;
 }
@@ -59,6 +57,10 @@ article nav .icons-container {
   }
 }
 
+.blog-txt {
+  max-width: 900px;
+}
+
 .modal {
   display: none;
   position: fixed;
@@ -85,7 +87,7 @@ article nav .icons-container {
 }
 
 .modal-img {
-  width: 100%;  
+  width: 100%;
   max-height: 80vh;
   object-fit: contain;
 }
@@ -140,8 +142,8 @@ article nav .icons-container {
 
 /* Comment section */
 
-
-.comment-section > section, .comment-content {
+.comment-section > section,
+.comment-content {
   all: unset;
 }
 
@@ -149,15 +151,11 @@ article nav .icons-container {
   margin-top: 0;
 }
 
-
-
 .comment-section .comments div {
   box-shadow: 0 0 9px var(--primary-op25);
   padding: 1rem 1rem 1rem 1rem;
   margin: 0 0 1rem 0;
 }
-
-
 
 .comment-header {
   display: flex;
@@ -171,7 +169,8 @@ article nav .icons-container {
   border-radius: 50%;
 }
 
-.comment-header h3, .comment-header p{
+.comment-header h3,
+.comment-header p {
   margin-block-end: 0;
   margin-block-start: 0;
 }
@@ -180,7 +179,8 @@ article nav .icons-container {
   font-size: 1.5rem;
 }
 
-.comment-header h3, .comment-header p {
+.comment-header h3,
+.comment-header p {
   font-size: 1rem;
 }
 
@@ -191,7 +191,7 @@ article nav .icons-container {
 .comment-header p {
   font-weight: 300;
 }
-.comments div{
+.comments div {
   max-width: 600px;
 }
 .comment-section {
@@ -206,7 +206,6 @@ section.form-container {
 
 .form-container h3 {
   margin-bottom: 0;
-  
 }
 
 .comment-form {
@@ -236,7 +235,7 @@ section.form-container {
 }
 .comment-form input:focus,
 .comment-form textarea:focus {
-  font-size: 1.0rem;
+  font-size: 1rem;
   outline: none;
   border-bottom: 2px solid var(--primary);
 }
@@ -251,7 +250,6 @@ section.form-container {
   font-family: "Roboto", sans-serif;
 }
 
-
 .comment-form label {
   margin-top: 1.5rem;
   font-size: 1.1rem;
@@ -259,9 +257,7 @@ section.form-container {
   margin-bottom: 5px;
 }
 
-
-
-.comment-send-btn{
+.comment-send-btn {
   border: none;
   max-width: 300px;
   cursor: pointer;
@@ -306,10 +302,8 @@ section.form-container {
   }
 }
 
-
-
 @media screen and (min-width: 600px) {
-  .modal-content figure{
+  .modal-content figure {
     width: 80%;
   }
 }
@@ -348,7 +342,6 @@ section.form-container {
   .comment-section {
     width: 70%;
   }
-
 
   @keyframes image-expand {
     0% {

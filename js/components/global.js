@@ -59,6 +59,7 @@ function buildBlog(post) {
     featuredImage = post._embedded["wp:featuredmedia"][0].source_url;
   }
   const category = post._embedded["wp:term"][0][0].name;
+  const altTxt = post._embedded["wp:featuredmedia"][0].alt_text;
 
   // format the date
   const date = new Date(post.date);
@@ -67,7 +68,7 @@ function buildBlog(post) {
   return `
                 <div class="post-container">
               <div class="post-image">
-                <img src="${featuredImage}" alt="alt-text" />
+                <img src="${featuredImage}" alt="${altTxt}" />
                 <a aria-label="link to post" href="post.html?post=${post.id}"></a>
               </div>
               <div class="post-info">
@@ -228,9 +229,7 @@ function buildComments(comment) {
   return `
               <div>
                  <header class="comment-header">
-                     <img src="${comment.author_avatar_urls[96]}" alt="${
-    comment.author_name
-  }'s avatar">
+                     <img src="${comment.author_avatar_urls[96]}" alt="${comment.author_name}'s avatar">
                      <h3>${comment.author_name}</h3>
                      <span>·</span>
                      <p>${dateFormatted + " " + comment.date.split("T")[1].substring(0, 5)}</p>
@@ -255,12 +254,4 @@ function buildContactError(errorMessage) {
         </div>`;
 }
 
-export {
-  buildCarousel,
-  buildBlog,
-  buildPost,
-  buildModal,
-  buildComments,
-  buildError,
-  buildContactError,
-};
+export { buildCarousel, buildBlog, buildPost, buildModal, buildComments, buildError, buildContactError };
