@@ -513,7 +513,7 @@ textarea {
 
 @media screen and (min-width: 1080px) {
   .social-icons ul li {
-    margin: 5px;
+    margin: 0 5px;
   }
   div.status {
     margin-top: 6rem;
